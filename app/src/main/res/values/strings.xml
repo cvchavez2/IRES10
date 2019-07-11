@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">IRES 1.0</string>
+
+    <string-array name="infrastructure">
+        <item>Select</item>
+        <item>Street/Sidewalk</item>
+        <item>Traffic Light</item>
+        <item>Sewage</item>
+        <item>Electric System</item>
+        <item>Leafy Trees</item>
+        <item>Graffiti</item>
+        <item>Water Leak</item>
+        <item>Trash</item>
+        <item>Flooding</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="crime">
+        <item>Select</item>
+        <item>Theft</item>
+        <item>Harassment</item>
+        <item>Assault</item>
+        <item>Burglary</item>
+        <item>Homicide</item>
+        <item>Auto theft</item>
+        <item>Property destruction</item>
+        <item>Kidnapping</item>
+        <item>Ran over</item>
+    </string-array>
+
+    <string-array name="environment">
+        <item>Select</item>
+        <item>Air</item>
+        <item>Soil</item>
+        <item>Noise</item>
+        <item>Fire</item>
+        <item>Water</item>
+        <item>Animals</item>
+    </string-array>
+
+</resources>

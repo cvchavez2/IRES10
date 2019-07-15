@@ -55,6 +55,7 @@ public class DoReport extends AppCompatActivity implements AdapterView.OnItemSel
     }
 
     public void submitReport(View view){
+        //Fix Me
         new MyAsyncTask(this).execute(type, lat, lon, System.currentTimeMillis(), spinnerSelection, description.getText());
     }
 

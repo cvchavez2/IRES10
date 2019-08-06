@@ -4,6 +4,9 @@
     <item android:id="@+id/viewReports"
         android:title="View Reports" />
 
+    <item android:id="@+id/viewReportsMap"
+        android:title="View Map" />
+
     <item android:id="@+id/about"
         android:title="About" />
 

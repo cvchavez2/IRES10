@@ -125,14 +125,18 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         switch (item.getItemId()) {
             case R.id.about:
 //                startActivity(new Intent(this, About.class));
-                return true;
+                break;
             case R.id.help:
 //                startActivity(new Intent(this, Help.class));
-                return true;
+                break;
             case R.id.viewReports:
                 startActivity(new Intent(this, ViewReports.class));
-            default:
-                return super.onOptionsItemSelected(item);
+                break;
+            case R.id.viewReportsMap:
+                startActivity(new Intent(this, ViewMap.class));
+                break;
+
         }
+        return super.onOptionsItemSelected(item);
     }
 }

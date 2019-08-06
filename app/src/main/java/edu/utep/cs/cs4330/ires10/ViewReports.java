@@ -36,6 +36,7 @@ public class ViewReports extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_reports);
+        setTitle("Reports");
 
         GETRequestToGetReports();
         listView = findViewById(R.id.listView);

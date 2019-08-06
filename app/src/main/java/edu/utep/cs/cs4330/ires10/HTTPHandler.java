@@ -1,5 +1,7 @@
 package edu.utep.cs.cs4330.ires10;
 
+import android.util.Log;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -19,7 +21,7 @@ public class HTTPHandler {
 
     public static String sendPost(String r_url , JSONObject postDataParams) throws Exception {
         URL url = new URL(r_url);
-
+        Log.d("UTEPCS", r_url);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setReadTimeout(20000);
         conn.setConnectTimeout(20000);
@@ -51,6 +53,8 @@ public class HTTPHandler {
     }
     public static String sendGet(String url) throws IOException {
         URL obj = new URL(url);
+        Log.d("UTEPCS", url);
+
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         int responseCode = con.getResponseCode();

@@ -14,8 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ViewMap"></activity>
-        <activity android:name=".ViewReports" />
+        <activity android:name=".ReportsViewMain"></activity>
+        <!--<activity android:name=".ViewMap" />-->
+        <!--<activity android:name=".ViewReports" />-->
         <activity android:name=".DoReport" />
         <activity android:name=".MainActivity">
             <intent-filter>

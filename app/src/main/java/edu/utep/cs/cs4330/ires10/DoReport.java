@@ -87,7 +87,7 @@ public class DoReport extends AppCompatActivity implements AdapterView.OnItemSel
 //                startActivity(new Intent(this, Help.class));
                 return true;
             case R.id.viewReports:
-                startActivity(new Intent(this, ViewReports.class));
+                startActivity(new Intent(this, ReportsViewMain.class));
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -13,6 +13,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -130,12 +131,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 //                startActivity(new Intent(this, Help.class));
                 break;
             case R.id.viewReports:
-                startActivity(new Intent(this, ViewReports.class));
+                startActivity(new Intent(this, ReportsViewMain.class));
                 break;
-            case R.id.viewReportsMap:
-                startActivity(new Intent(this, ViewMap.class));
-                break;
-
+//            case R.id.viewReportsMap:
+//                startActivity(new Intent(this, ViewMap.class));
+//                break;
         }
         return super.onOptionsItemSelected(item);
     }

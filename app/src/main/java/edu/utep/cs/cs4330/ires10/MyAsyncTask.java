@@ -25,16 +25,16 @@ public class MyAsyncTask extends AsyncTask<Object,String,String> {
                 postDataParams.put("longitude", params[2]);
                 postDataParams.put("timestamp", params[3]);
 
-                return HTTPHandler.sendPost("http://172.19.157.12:3000/alert", postDataParams);
+                return HTTPHandler.sendPost("http://172.19.156.15:3000/alert", postDataParams);
             }
             else if(params[0].equals("GET")){
                 //GET Request
-                return data = HTTPHandler.sendGet("http://172.19.157.12:3000/infrastructure");
+                return data = HTTPHandler.sendGet("http://172.19.156.15:3000/infrastructure");
             }
             else {
                 // POST Request for all other type of reports
                 JSONObject postDataParams = putInJSON(params);
-                return HTTPHandler.sendPost("http://172.19.157.12:3000/"+params[0], postDataParams);
+                return HTTPHandler.sendPost("http://172.19.156.15:3000/"+params[0], postDataParams);
             }
         } catch (Exception e) {
             return new String("Exception: " + e.getMessage());

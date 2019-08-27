@@ -9,7 +9,11 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,21 +29,23 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
-    private double lat, lon;
-    private TextView addressTextV;
+    static double lat, lon;
     protected LocationManager locationManager;
-    final private static String CRIME = "crime";
-    final private static String SUSPICIOUS_ACTIVITY = "suspicious";
-    final private static String ENVIRONMENT = "environment";
-    final private static String INFRASTRUCTURE = "infrastructure";
-    final private static String MOBILITY = "mobility";
+    Toolbar myToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
-        addressTextV = findViewById(R.id.addressTextV);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        myToolbar.setTitle("Help");
+
+        loadFragment(new AlertFragment());
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
@@ -48,41 +54,48 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                     android.Manifest.permission.ACCESS_COARSE_LOCATION}, 255);
             return;
         }
-
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 2, this);
-    }
-
-    public void crimeReport(View view){
-        startDoReportActivity(CRIME);
-    }
-
-    public void suspiciousReport(View view){
 
     }
 
-    public void environmentReport(View view){
-        startDoReportActivity(ENVIRONMENT);
-    }
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-    public void infrastructureReport(View view){
-        startDoReportActivity(INFRASTRUCTURE);
-    }
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.navigation_shop:
+                    myToolbar.setTitle("Help");
+                    fragment = new AlertFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_gifts:
+                    myToolbar.setTitle("List");
+                    fragment = new ReportListFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_cart:
+                    myToolbar.setTitle("Map");
+                    fragment = new MapFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_profile:
+                    myToolbar.setTitle("Add");
+                    Intent intent = new Intent(MainActivity.this, AddReport.class);
+                    startActivity(intent);
+                    return true;
+            }
+            return false;
+        }
+    };
 
-    public void mobilityReport(View view){
-
-    }
-
-    public void startDoReportActivity(String type){
-        Intent intent = new Intent(MainActivity.this, DoReport.class);
-        intent.putExtra("type", type);
-        intent.putExtra("latitude", lat);
-        intent.putExtra("longitude", lon);
-        startActivity(intent);
-    }
-
-    public void sendPanicAlert(View view){
-        String type = "alert";
-        new MyAsyncTask(this).execute(type, lat, lon, System.currentTimeMillis());
+    private void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     @Override
@@ -92,8 +105,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         try {
             // Geocoder translates coordinates into a street name
             Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-            List<Address> addressList = geocoder.getFromLocation(lat, lon, 1);
-            addressTextV.setText(addressTextV.getText() + "\n"+addressList.get(0).getAddressLine(0));
+//            List<Address> addressList = geocoder.getFromLocation(lat, lon, 1);
+//            addressTextV.setText(addressTextV.getText() + "\n"+addressList.get(0).getAddressLine(0));
         }catch(Exception e) {
             e.printStackTrace();
         }
@@ -131,11 +144,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 //                startActivity(new Intent(this, Help.class));
                 break;
             case R.id.viewReports:
-                startActivity(new Intent(this, ReportsViewMain.class));
+                startActivity(new Intent(this, AddReport.class));
                 break;
-//            case R.id.viewReportsMap:
-//                startActivity(new Intent(this, ViewMap.class));
-//                break;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -10,6 +10,7 @@ public class MyAsyncTask extends AsyncTask<Object,String,String> {
 
     private Context context;
     String data = null;
+    String url_port = "http://172.19.156.169:3000";
 
     public MyAsyncTask(Context context) {  // can take other params if needed
         this.context = context;
@@ -25,16 +26,16 @@ public class MyAsyncTask extends AsyncTask<Object,String,String> {
                 postDataParams.put("longitude", params[2]);
                 postDataParams.put("timestamp", params[3]);
 
-                return HTTPHandler.sendPost("http://172.19.156.15:3000/alert", postDataParams);
+                return HTTPHandler.sendPost(url_port + "/alert", postDataParams);
             }
             else if(params[0].equals("GET")){
                 //GET Request
-                return data = HTTPHandler.sendGet("http://172.19.156.15:3000/infrastructure");
+                return data = HTTPHandler.sendGet(url_port + "/reports?category=" + params[1] ); // params[1] contains the report type; to query all reports '/^'
             }
             else {
                 // POST Request for all other type of reports
                 JSONObject postDataParams = putInJSON(params);
-                return HTTPHandler.sendPost("http://172.19.156.15:3000/"+params[0], postDataParams);
+                return HTTPHandler.sendPost(url_port + "/allReports", postDataParams); // params[0] contain the type of report
             }
         } catch (Exception e) {
             return new String("Exception: " + e.getMessage());
@@ -45,7 +46,7 @@ public class MyAsyncTask extends AsyncTask<Object,String,String> {
     protected void onPostExecute(String s) {
         if (s != null) {
             data = s;
-            Toast.makeText(context.getApplicationContext(), s, Toast.LENGTH_LONG).show();
+//            Toast.makeText(context.getApplicationContext(), s, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -53,6 +54,7 @@ public class MyAsyncTask extends AsyncTask<Object,String,String> {
         JSONObject postDataParams = null;
         try {
             postDataParams = new JSONObject();
+            postDataParams.put("category", params[0]);
             postDataParams.put("latitude", params[1]);
             postDataParams.put("longitude", params[2]);
             postDataParams.put("timestamp", params[3]);

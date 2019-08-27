@@ -36,4 +36,7 @@ public class ReportListManager {
     public void remove(int index){
         reportsList.remove(index);
     }
+    public void clear(){
+        reportsList.clear();
+    }
 }

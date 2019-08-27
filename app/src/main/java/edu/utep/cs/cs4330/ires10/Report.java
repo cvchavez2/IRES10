@@ -2,6 +2,7 @@ package edu.utep.cs.cs4330.ires10;
 
 public class Report {
 
+    private String category;
     private long date;
     private String incident;
     private double latitude;
@@ -16,12 +17,21 @@ public class Report {
     }
 
     //All type of Reports constructor
-    public Report(long date, String incident, double latitude, double longitude, String description){
+    public Report(String category, long date, String incident, double latitude, double longitude, String description){
+        this.category = category;
         this.date = date;
         this.incident = incident;
         this.latitude = latitude;
         this.longitude = longitude;
         this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public long getDate() {

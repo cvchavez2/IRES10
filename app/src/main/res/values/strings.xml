@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">IRES 1.0</string>
 
+    <string-array name="filter_categories">
+        <item>View all</item>
+        <item>View Criminal Activity</item>
+        <item>View Suspicious Activity</item>
+        <item>View Environment</item>
+        <item>View Infrastructure</item>
+        <item>View Mobility</item>
+    </string-array>
+
     <string-array name="infrastructure">
         <item>Select</item>
         <item>Street/Sidewalk</item>
@@ -37,5 +46,27 @@
         <item>Water</item>
         <item>Animals</item>
     </string-array>
+
+    <string-array name="mobility">
+        <item>Select</item>
+        <item>Traffic</item>
+        <item>Accident</item>
+        <item>Traffic light</item>
+        <item>Parking</item>
+        <item>Blockades</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="suspicious">
+        <item>Select</item>
+        <item>Drugs/Narcotics</item>
+        <item>Vehicle parked at odd location</item>
+        <item>Package/luggage unattended</item>
+        <item>Someone pays unusual attention to facilities</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

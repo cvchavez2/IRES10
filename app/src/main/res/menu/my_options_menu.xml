@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_add_icon"
+        android:icon="@drawable/ic_add_dark"
+        app:showAsAction="ifRoom|withText"
+        android:title="Add Report">
+    </item>
+
+    <item
+        android:id="@+id/action_refresh_icon"
+        android:icon="@drawable/ic_refresh_dark"
+        app:showAsAction="ifRoom|withText"
+        android:title="Refresh">
+    </item>
 
     <item android:id="@+id/viewReports"
-        android:title="View Reports" />
-
-    <!--<item android:id="@+id/viewReportsMap"-->
-        <!--android:title="View Map" />-->
+        android:title="Add Report" />
 
     <item android:id="@+id/about"
         android:title="About" />

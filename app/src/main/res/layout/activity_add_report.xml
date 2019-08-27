@@ -22,14 +22,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select category of your report"
-        android:textSize="16dp"/>
+        android:textSize="16sp"/>
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp">
             <LinearLayout
@@ -126,12 +126,11 @@
     </HorizontalScrollView>
 
     <TextView
-        android:paddingTop="10dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add picture to report"
-        android:textSize="16dp"/>
+        android:textSize="16sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -145,7 +144,7 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="170dp"
+            android:layout_width="0dp"
             android:layout_height="170dp"
             android:layout_weight="1"
             android:background="@drawable/image" />
@@ -163,7 +162,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select incident from below"
-        android:textSize="16dp"/>
+        android:textSize="16sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -174,15 +173,15 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#71909E"
-            android:layout_gravity="right">
+            android:layout_gravity="end">
 
             <Spinner
                 android:id="@+id/spinner2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:popupBackground="#E6F2F2F3"
-                android:layout_gravity="right" />
+                android:layout_gravity="end" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -202,7 +201,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="16dp"/>
+            android:textSize="16sp"/>
     </LinearLayout>
 
     <LinearLayout

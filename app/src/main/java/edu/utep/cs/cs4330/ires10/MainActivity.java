@@ -137,15 +137,17 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     public boolean onOptionsItemSelected(MenuItem item) {
         //respond to menu item selection
         switch (item.getItemId()) {
+            case R.id.viewReports:
+                startActivity(new Intent(this, AddReport.class));
+                break;
             case R.id.about:
 //                startActivity(new Intent(this, About.class));
                 break;
             case R.id.help:
 //                startActivity(new Intent(this, Help.class));
                 break;
-            case R.id.viewReports:
-                startActivity(new Intent(this, AddReport.class));
-                break;
+            case R.id.exit:
+                System.exit(1);
         }
         return super.onOptionsItemSelected(item);
     }

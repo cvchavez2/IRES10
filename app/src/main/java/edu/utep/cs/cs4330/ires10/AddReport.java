@@ -30,6 +30,7 @@ public class AddReport extends AppCompatActivity implements AdapterView.OnItemSe
         setSupportActionBar(myChildToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("SCS Generate Report");
 
         description = (EditText)findViewById(R.id.description);
         textView = (TextView)findViewById(R.id.selection_spinner);

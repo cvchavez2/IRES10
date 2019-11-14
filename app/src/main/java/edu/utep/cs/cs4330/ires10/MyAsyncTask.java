@@ -10,7 +10,7 @@ public class MyAsyncTask extends AsyncTask<Object,String,String> {
 
     private Context context;
     String data = null;
-    String url_port = "http://172.19.156.169:3000";
+    String url_port = "http://172.20.45.62:3000";
 
     public MyAsyncTask(Context context) {  // can take other params if needed
         this.context = context;

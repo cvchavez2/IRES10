@@ -28,7 +28,7 @@ public class MapFragment extends Fragment {
         WebView mapWebView = (WebView)view.findViewById(R.id.webView);
         WebSettings webSettings = mapWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        mapWebView.loadUrl("http://172.20.44.68:4000/");
+        mapWebView.loadUrl("http://192.168.1.67:4000/");
         // Inflate the layout for this fragment
         return view;
     }

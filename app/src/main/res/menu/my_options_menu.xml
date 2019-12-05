@@ -3,13 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_add_icon"
-        android:icon="@drawable/ic_add_dark"
-        app:showAsAction="ifRoom|withText"
-        android:title="Add Report">
-    </item>
-
-    <item
         android:id="@+id/action_refresh_icon"
         android:icon="@drawable/ic_refresh_dark"
         app:showAsAction="ifRoom|withText"
@@ -17,7 +10,7 @@
     </item>
 
     <item android:id="@+id/viewReports"
-        android:title="Add Report" />
+        android:title="Create Report" />
 
     <item android:id="@+id/about"
         android:title="About" />

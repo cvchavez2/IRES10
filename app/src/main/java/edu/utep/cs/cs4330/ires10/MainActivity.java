@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_gifts:
-                    myToolbar.setTitle("List");
+                    myToolbar.setTitle("Reports");
                     fragment = new ReportListFragment();
                     loadFragment(fragment);
                     return true;

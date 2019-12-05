@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="grayCustom">#81868f</color>
+    <color name="blueCustom">#0e83c2</color>
+    <color name="orangeCustom">#de7a10</color>
+    <color name="greenCustom">#318f6c</color>
+    <color name="spinnerDefault">#83A4B3</color>
 </resources>

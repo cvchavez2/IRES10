@@ -28,7 +28,7 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select category of your report"
+        android:text="Select Category of Your Report"
         android:textSize="16sp"/>
 
     <HorizontalScrollView
@@ -136,7 +136,7 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add picture to report"
+        android:text="Add Picture to Report"
         android:textSize="16sp"/>
 
     <LinearLayout
@@ -145,21 +145,25 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="86dp"
+            android:id="@+id/button_image_library"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:text="Photo Library" />
+            android:textSize="12dp"
+            android:text="\nG\na\nl\nl\ne\nr\ny\n" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
-            android:layout_height="170dp"
+            android:layout_height="250dp"
             android:layout_weight="1"
             android:background="@drawable/image" />
 
         <Button
-            android:layout_width="86dp"
+            android:id="@+id/button_image_camera"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:text="Take Picture" />
+            android:textSize="12dp"
+            android:text="\nC\na\nm\ne\nr\na\n" />
 
     </LinearLayout>
 
@@ -168,7 +172,7 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select incident from below"
+        android:text="Select Incident From Below"
         android:textSize="16sp"/>
 
     <LinearLayout
@@ -177,18 +181,16 @@
         android:padding="10dp">
 
         <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#71909E"
-            android:layout_gravity="end">
+            android:background="#83A4B3">
 
             <Spinner
                 android:id="@+id/spinner2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:popupBackground="#E6F2F2F3"
-                android:layout_gravity="end" />
+                android:popupBackground="#E6F2F2F3" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -202,7 +204,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You selected: "/>
+            android:text="You Selected: "/>
         <TextView
             android:id="@+id/selection_spinner"
             android:layout_width="match_parent"
@@ -219,7 +221,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Provide description:"/>
+            android:text="Provide Description:"/>
 
         <EditText
             android:id="@+id/description"
@@ -227,7 +229,8 @@
             android:layout_height="75dp"
             android:gravity="start|top"
             android:hint="e.g. Car abandoned since last week."
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:textStyle="italic" />
 
     </LinearLayout>
 

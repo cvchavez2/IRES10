@@ -1,5 +1,6 @@
 package edu.utep.cs.cs4330.ires10;
 
+import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +23,8 @@ public class AddReport extends AppCompatActivity implements AdapterView.OnItemSe
     private int categoryID = R.array.crime;
     private Spinner spinner;
     private String spinnerSelection, category = "crime";
+    private Button buttonLibrary, buttonCamera;
+    private RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,14 @@ public class AddReport extends AppCompatActivity implements AdapterView.OnItemSe
         setSupportActionBar(myChildToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-        ab.setTitle("SCS Generate Report");
+        ab.setTitle("Create Report");
+
+        relativeLayout = findViewById(R.id.relativeLayout);
+
+        // Buttons
+        buttonLibrary = findViewById(R.id.button_image_library);
+        buttonCamera = findViewById(R.id.button_image_camera);
+
 
         description = (EditText)findViewById(R.id.description);
         textView = (TextView)findViewById(R.id.selection_spinner);
@@ -71,29 +83,46 @@ public class AddReport extends AppCompatActivity implements AdapterView.OnItemSe
     public void crimeReport(View view){
         toastMssg("Criminal category");
         setSpinner(R.array.crime);
+//        buttonLibrary.setTextColor(Color.WHITE);
+//        buttonCamera.setTextColor(Color.WHITE);
+//        buttonCamera.setBackgroundColor(Color.BLACK);
+//        buttonLibrary.setBackgroundColor(Color.BLACK);
+        relativeLayout.setBackgroundColor(getResources().getColor(R.color.spinnerDefault));
         category = "crime";
 
     }
     public void suspiciousReport(View view){
         toastMssg("Suspicious category");
         setSpinner(R.array.suspicious);
+//        buttonCamera.setBackgroundColor(getResources().getColor(R.color.grayCustom));
+//        buttonLibrary.setBackgroundColor(getResources().getColor(R.color.grayCustom));
+        relativeLayout.setBackgroundColor(getResources().getColor(R.color.grayCustom));
         category = "suspicious";
 
     }
     public void infrastructureReport(View view){
         toastMssg("Infrastructure category");
         setSpinner(R.array.infrastructure);
+//        buttonCamera.setBackgroundColor(getResources().getColor(R.color.orangeCustom));
+//        buttonLibrary.setBackgroundColor(getResources().getColor(R.color.orangeCustom));
+        relativeLayout.setBackgroundColor(getResources().getColor(R.color.orangeCustom));
         category = "infrastructure";
 
     }
     public void environmentReport(View view){
         toastMssg("Environment category");
         setSpinner(R.array.environment);
+//        buttonCamera.setBackgroundColor(getResources().getColor(R.color.greenCustom));
+//        buttonLibrary.setBackgroundColor(getResources().getColor(R.color.greenCustom));
+        relativeLayout.setBackgroundColor(getResources().getColor(R.color.greenCustom));
         category = "environment";
     }
     public void mobilityReport(View view){
         toastMssg("Mobility category");
         setSpinner(R.array.mobility);
+//        buttonCamera.setBackgroundColor(getResources().getColor(R.color.blueCustom));
+//        buttonLibrary.setBackgroundColor(getResources().getColor(R.color.blueCustom));
+        relativeLayout.setBackgroundColor(getResources().getColor(R.color.blueCustom));
         category = "mobility";
 
     }
